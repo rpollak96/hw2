@@ -79,7 +79,11 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-model.destroy_all 
+Studio.destroy_all 
+# Movies.destroy_all
+# Actors.destroy_all
+# Roles.destroy_all
+# Agents.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -94,6 +98,12 @@ model.destroy_all
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+
 
 # Prints a header for the movies output
 puts "Movies"
