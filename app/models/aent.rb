@@ -1,0 +1,2 @@
+class Aent < ApplicationRecord
+end

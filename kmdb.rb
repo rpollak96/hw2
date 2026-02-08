@@ -79,8 +79,17 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+model.destroy_all 
+
 # Generate models and tables, according to the domain model.
 # TODO!
+
+# rails generate model Studios
+# rails generate model Movies
+# rails generate model Actors
+# rails generate model Roles
+# rails generate model Agents
+
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
