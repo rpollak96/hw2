@@ -209,9 +209,98 @@ Hathaway = Actor.find_by({ "name" => "Anne Hathaway" })
 
 # puts "Actors: #{Actor.all.count}"
 
+new_role=Role.new
+new_role["movie_id"] = BatmanBegins["id"]
+new_role["actor_id"] = Bale["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
 
+new_role=Role.new
+new_role["movie_id"] = BatmanBegins["id"]
+new_role["actor_id"] = Caine["id"]
+new_role["character_name"] = "Alfred"
+new_role.save
 
-puts "Roles: #{Role.all.count}"
+new_role=Role.new
+new_role["movie_id"] = BatmanBegins["id"]
+new_role["actor_id"] = Neeson["id"]
+new_role["character_name"] = "Ra's Al Ghul"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = BatmanBegins["id"]
+new_role["actor_id"] = Holmes["id"]
+new_role["character_name"] = "Rachel Dawes"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = BatmanBegins["id"]
+new_role["actor_id"] = Oldman["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKnight["id"]
+new_role["actor_id"] = Bale["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKnight["id"]
+new_role["actor_id"] = Ledger["id"]
+new_role["character_name"] = "Joker"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKnight["id"]
+new_role["actor_id"] = Eckhart["id"]
+new_role["character_name"] = "Harvey Dent"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKnight["id"]
+new_role["actor_id"] = Caine["id"]
+new_role["character_name"] = "Alfred"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKnight["id"]
+new_role["actor_id"] = Gyllenhaal["id"]
+new_role["character_name"] = "Rachel Dawes"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["actor_id"] = Bale["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["actor_id"] = Oldman["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["actor_id"] = Hardy["id"]
+new_role["character_name"] = "Bane"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["actor_id"] = GordonLevitt["id"]
+new_role["character_name"] = "John Blake"
+new_role.save
+
+new_role=Role.new
+new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["actor_id"] = Hathaway["id"]
+new_role["character_name"] = "Selina Kyle"
+new_role.save
+
+# puts "Roles: #{Role.all.count}"
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -219,6 +308,11 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+movies = Movie.all
+movies.each do |movie|
+  puts movie.title
+end
 
 # Prints a header for the cast output
 puts ""
@@ -228,6 +322,7 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
 
 # Prints a header for the agent's list of represented actors output
 puts ""
