@@ -130,7 +130,7 @@ new_movie.save
 
 BatmanBegins = Movie.find_by({ "title" => "Batman Begins" })
 TheDarkKnight = Movie.find_by({ "title" => "The Dark Knight" })
-TheDarkKinightRises = Movie.find_by({ "title" => "The Dark Knight Rises" })
+TheDarkKnightRises = Movie.find_by({ "title" => "The Dark Knight Rises" })
 # puts "Movies: #{Movie.all.count}"
 
 new_agent=Agent.new
@@ -270,31 +270,31 @@ new_role["character_name"] = "Rachel Dawes"
 new_role.save
 
 new_role=Role.new
-new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["movie_id"] = TheDarkKnightRises["id"]
 new_role["actor_id"] = Bale["id"]
 new_role["character_name"] = "Bruce Wayne"
 new_role.save
 
 new_role=Role.new
-new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["movie_id"] = TheDarkKnightRises["id"]
 new_role["actor_id"] = Oldman["id"]
 new_role["character_name"] = "Commissioner Gordon"
 new_role.save
 
 new_role=Role.new
-new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["movie_id"] = TheDarkKnightRises["id"]
 new_role["actor_id"] = Hardy["id"]
 new_role["character_name"] = "Bane"
 new_role.save
 
 new_role=Role.new
-new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["movie_id"] = TheDarkKnightRises["id"]
 new_role["actor_id"] = GordonLevitt["id"]
 new_role["character_name"] = "John Blake"
 new_role.save
 
 new_role=Role.new
-new_role["movie_id"] = TheDarkKinightRises["id"]
+new_role["movie_id"] = TheDarkKnightRises["id"]
 new_role["actor_id"] = Hathaway["id"]
 new_role["character_name"] = "Selina Kyle"
 new_role.save
