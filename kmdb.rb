@@ -80,10 +80,10 @@
 # TODO!
 
 Studio.destroy_all 
-# Movies.destroy_all
-# Actors.destroy_all
-# Roles.destroy_all
-# Agents.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+Agent.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -103,8 +103,115 @@ new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save
 
+WarnerBros = Studio.find_by({ "name" => "Warner Bros." })
+
+# puts "Studios: #{Studio.all.count}"
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = 2005
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = WarnerBros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight"
+new_movie["year_released"] = 2008
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = WarnerBros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["year_released"] = 2012
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = WarnerBros["id"]
+new_movie.save
+
+BatmanBegins = Movie.find_by({ "title" => "Batman Begins" })
+TheDarkKnight = Movie.find_by({ "title" => "The Dark Knight" })
+TheDarkKinightRises = Movie.find_by({ "title" => "The Dark Knight Rises" })
+# puts "Movies: #{Movie.all.count}"
+
+new_agent=Agent.new
+new_agent["name"] = "Ari Emanuel"
+new_agent.save
+
+AriEmanuel = Agent.find_by({"name" => "Ari Emanuel"})
+# puts "Agents: #{Agent.all.count}"
+
+new_actor=Actor.new
+new_actor["agent_id"] = AriEmanuel["id"]
+new_actor["name"] = "Christian Bale"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Michael Caine"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Liam Neeson"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Katie Holmes"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Gary Oldman"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Heath Ledger"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Aaron Eckhart"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Maggie Gyllenhaal"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Tom Hardy"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Joseph Gordon-Levitt"
+new_actor.save
+
+new_actor=Actor.new
+new_actor["agent_id"] = nil
+new_actor["name"] = "Anne Hathaway"
+new_actor.save
+
+Bale = Actor.find_by({ "name" => "Christian Bale" })
+Caine = Actor.find_by({ "name" => "Michael Caine" })
+Neeson = Actor.find_by({ "name" => "Liam Neeson" })
+Holmes = Actor.find_by({ "name" => "Katie Holmes" })
+Oldman = Actor.find_by({ "name" => "Gary Oldman" })
+Ledger = Actor.find_by({ "name" => "Heath Ledger" })
+Eckhart = Actor.find_by({ "name" => "Aaron Eckhart" })
+Gyllenhaal = Actor.find_by({ "name" => "Maggie Gyllenhaal" })
+Hardy = Actor.find_by({ "name" => "Tom Hardy" })
+GordonLevitt = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
+Hathaway = Actor.find_by({ "name" => "Anne Hathaway" })
+
+# puts "Actors: #{Actor.all.count}"
 
 
+
+puts "Roles: #{Role.all.count}"
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
