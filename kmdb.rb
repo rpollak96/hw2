@@ -309,9 +309,11 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-movies = Movie.all
-movies.each do |movie|
-  puts movie.title
+
+for movie in Movie.all
+
+  studio = Studio.find_by({ "id" => movie["studio_id"] })
+  puts "#{movie['title'].ljust(22)} #{movie['year_released'].to_s.ljust(14)} #{movie['rated'].ljust(6)} #{studio['name']}"
 end
 
 # Prints a header for the cast output
@@ -323,6 +325,14 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
+for movie in Movie.all
+  movie_roles = Role.where({ "movie_id" => movie["id"] })
+
+  for role in movie_roles
+    actor = Actor.find_by({ "id" => role["actor_id"] })
+    puts "#{movie['title'].ljust(22)} #{actor['name'].ljust(20)} #{role['character_name']}"
+  end
+end
 
 # Prints a header for the agent's list of represented actors output
 puts ""
@@ -332,3 +342,9 @@ puts ""
 
 # Query the actor data and loop through the results to display the agent's list of represented actors output.
 # TODO!
+
+represented_actors = Actor.where.not({ "agent_id" => nil })
+
+for actor in represented_actors
+  puts actor["name"]
+end
